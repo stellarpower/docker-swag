@@ -153,5 +153,24 @@ RUN \
     /root/.cache \
     /root/.cargo
 
+###########################################################################################################
+## Add packages for ModSecurity, nginx connector, and CRS that aren't yet merged into Alpine Repositories. 
+
+COPY ModSecurity_Packages/ /ModSecurity_Packages
+    
+RUN \
+  echo "**** Install ModSecurity Packages ****" && \
+  apk add --allow-untrusted /ModSecurity_Packages/*.apk
+
+# TODO: have needed a few dummy configs; libmodsec will create if missing, so touching empty
+RUN mkdir /etc/modsecurity.d && touch /etc/modsecurity.d/dummy.conf
+   
+RUN rm -r /ModSecurity_Packages
+
+###########################################################################################################
+RUN apk add fish
+#RUN chsh -s /usr/bin/fish root
+###########################################################################################################
+
 # add local files
 COPY root/ /
