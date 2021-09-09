@@ -2,7 +2,8 @@
 <!-- Please read the https://github.com/linuxserver/docker-swag/blob/master/.github/CONTRIBUTING.md -->
 
 # ModSecurity Additions
-- To use this image, please pull: `ghcr.io/stellarpower/docker-swag/add-modsecurity-with-manual-packages:1.18.0`
+- To use this image, please pull: ~~`ghcr.io/stellarpower/docker-swag/add-modsecurity-with-manual-packages:1.18.0`~~ `registry.gitlab.com/stellarpower/open-container-repository/docker-swag/add-modsecurity-with-manual-packages:1.18.0`
+
 
 
 --------------------------------------------------------------------------------------------------------
